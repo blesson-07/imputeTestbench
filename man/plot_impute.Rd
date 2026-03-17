@@ -7,7 +7,7 @@
 plot_impute(
   dataIn,
   smps = "mcar",
-  methods = c("na.approx", "na.interp", "na.interpolation", "na.locf", "na.mean"),
+  methods = c("na.approx", "na.interp", "na_interpolation", "na.locf", "na_mean"),
   methodPath = NULL,
   blck = 50,
   blckper = TRUE,

@@ -16,7 +16,7 @@
 #' @param methods Character vector of imputation method names to benchmark.
 #'   Each name must be a function available in the current environment or
 #'   specified via \code{methodPath}. Default is
-#'   \code{c("na.approx", "na.interp", "na.interpolation", "na.locf", "na.mean")}.
+#'   \code{c("na.approx", "na.interp", "na_interpolation", "na.locf", "na_mean")}.
 #' @param methodPath Character string giving the file path to a script that
 #'   defines custom imputation methods. Default is \code{NULL} (no custom
 #'   methods loaded).
@@ -88,7 +88,7 @@
 #'
 #' # Plot errors for each variable
 #' for (nm in names(results)) {
-#'   plot_errors(results[[nm]], plotType = "line", main = nm)
+#'   plot_errors(results[[nm]], plotType = "line")
 #' }
 #' }
 #'
@@ -97,7 +97,7 @@
 
 
 
-mv_impute_errors<- function(multi_dataIn, smps = 'mcar', methods = c("na.approx", "na.interp", "na.interpolation", "na.locf", "na.mean"),  methodPath = NULL, errorParameter = 'rmse', errorPath = NULL, blck = 50, blckper = TRUE, missPercentFrom = 10, missPercentTo = 90, interval = 10, repetition = 10, addl_arg = NULL){
+mv_impute_errors<- function(multi_dataIn, smps = 'mcar', methods = c("na.approx", "na.interp", "na_interpolation", "na.locf", "na_mean"),  methodPath = NULL, errorParameter = 'rmse', errorPath = NULL, blck = 50, blckper = TRUE, missPercentFrom = 10, missPercentTo = 90, interval = 10, repetition = 10, addl_arg = NULL){
 
 
   # Input validation

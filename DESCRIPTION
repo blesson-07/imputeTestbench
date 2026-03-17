@@ -36,3 +36,4 @@ Suggests:
     knitr,
     rmarkdown,
     magrittr
+VignetteBuilder: knitr

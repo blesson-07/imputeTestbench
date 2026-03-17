@@ -7,7 +7,7 @@
 impute_errors(
   dataIn,
   smps = "mcar",
-  methods = c("na.approx", "na.interp", "na.interpolation", "na.locf", "na.mean"),
+  methods = c("na.approx", "na.interp", "na_interpolation", "na.locf", "na_mean"),
   methodPath = NULL,
   errorParameter = "rmse",
   errorPath = NULL,
@@ -54,7 +54,7 @@ Returns an error comparison for imputation methods as an \code{errprof} object. 
 Function working as testbench for comparison of imputing models
 }
 \details{
-The default methods for \code{impute_errors} are \code{\link[zoo]{na.approx}}, \code{\link[forecast]{na.interp}}, \code{\link[imputeTS]{na.interpolation}}, \code{\link[zoo]{na.locf}},  and \code{\link[imputeTS]{na.mean}}.  See the help file for each for additional documentation. Additional arguments for the imputation functions are passed as a list of lists to the \code{addl_arg} argument, where the list contains one to many elements that are named by the \code{methods}. The elements of the master list are lists with arguments for the relevant methods. See the examples.
+The default methods for \code{impute_errors} are \code{\link[zoo]{na.approx}}, \code{\link[forecast]{na.interp}}, \code{\link[imputeTS]{na_interpolation}}, \code{\link[zoo]{na.locf}},  and \code{\link[imputeTS]{na_mean}}.  See the help file for each for additional documentation. Additional arguments for the imputation functions are passed as a list of lists to the \code{addl_arg} argument, where the list contains one to many elements that are named by the \code{methods}. The elements of the master list are lists with arguments for the relevant methods. See the examples.
 
 A user-supplied function can also be passed to \code{methods} as an additional imputation method.  A character string indicating the path of the function must also be supplied to \code{methodPath}.  The path must point to a function where the first argument is the time series to impute.
 
@@ -85,7 +85,7 @@ aa
 plot_errors(aa)
 
 # passing addtional arguments to imputation methods
-impute_errors(dataIn = nottem, addl_arg = list(na.mean = list(option = 'mode')))
+impute_errors(dataIn = nottem, addl_arg = list(na_mean = list(option = 'mode')))
 }
 }
 \seealso{
