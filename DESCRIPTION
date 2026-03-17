@@ -30,7 +30,8 @@ Authors@R: c(
     )
   )
 LazyData: TRUE
-RoxygenNote: 6.0.1
+RoxygenNote: 7.3.3
+Encoding: UTF-8
 Suggests:
     knitr,
     rmarkdown,
